@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+
+    "name": "Tinkoff statistic",
+    "version": "1.1",
+"content_scripts": [
+        {
+            "matches": [
+                "*://*.tinkoff.ru/invest/stocks/*/events/*",
+				"*://*.tinkoff.ru/invest/margin/equities*"
+            ],
+            "js": [
+				"jquery.min.js",
+                "background.js"
+            ],
+            "run_at": "document_end",			
+			"permissions": [
+				"cookies",
+				"*://*.tinkoff.ru/*"
+			]
+        }
+    ],
+    "background": {
+    "service_worker": "background.html"
+    }
+}
